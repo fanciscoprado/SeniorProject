@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <title>KSSU</title>
 </head>
 <body>
+<script src="index.js"></script>
 <audio controls autoplay name="media">
     <source src="https://streamingv2.shoutcast.com/kssu" type="audio/aac">
 </audio>
+<a href="print.html"
+   onclick="close_window(); window.open('index.html',
+                         'newwindow',
+                         'width=300,height=250');
+
+              return false;"
+>Pop out</a>
 </body>
 </html>
