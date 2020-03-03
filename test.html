@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <style type = "text/css">
+        div#vid_box{background: #333; padding: 10px; margin:0px auto;}
         div#video_controls_bar{ background: #333; padding: 10px;}
     </style>
     <script>
@@ -10,24 +11,24 @@
             var vid = document.getElementById(vid);
             if(vid.paused){
                 vid.play();
-                btn.innerHtml = "Pause";
+                btn.innerHTML = "Pause";
             }else{
                 vid.pause();
-                btn.innerHtml = "Play";
+                btn.innerHTML = "Play";
             }
         }
 
     </script>
-    <meta charset="UTF-8">
-    <title>Title</title>
 
 </head>
-<body align="center">
-<video id="'my_video" controls autoplay name="media" width="550" height="320">
-    <source src="https://streamingv2.shoutcast.com/kssu" type="audio/aac">
-</video>
-<div id="video_controls_bar">
-    <button id ="playpausebtn" onclick="playPause(this, 'my_video')">Pause</button>
+<body>
+<div id = "vid_box">
+    <video id="my_video" controls="controls" width="550" height="320" autoplay>
+        <source src="https://streamingv2.shoutcast.com/kssu" type="audio/aac">
+    </video>
+    <div id="video_controls_bar">
+    <button id = "btn1" onclick="playPause(this,'my_video')">Pause</button>
+</div>
 </div>
 </body>
 
