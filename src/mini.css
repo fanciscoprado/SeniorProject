@@ -1,0 +1,84 @@
+
+.topbar{
+    width: 400px;
+    position: relative;
+    height: 100px;
+    z-index: 1;
+    background: white;
+}
+
+.topinner{
+    height: inherit;
+    position: relative;
+    z-index: 4;
+}
+.logo{
+    height: 96px;
+    width: 198.72px;
+    padding-top: 4px;
+}
+.imageLogo{
+    max-width: 100%;
+    border-style: none;
+}
+.flexContainer{
+
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: inherit;
+
+
+}
+.flexLeft{
+    order: 1;
+    width: 300px;
+    margin-right: 100px;
+    height: inherit;
+    overflow-y:scroll;
+}
+.flexMid{
+    order: 2;
+
+}
+.flexRight{
+    order: 3;
+    margin-left: 100px;
+    height: inherit;
+    width: auto;
+    overflow-y:scroll;
+
+}
+.middle{
+    width: 400px;
+    height: 200px;
+    background-image: url("images/bg4me.jpg");
+    position: relative;
+    height: 200px;
+
+
+
+
+}
+.imageAlign{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.player{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.bottom {
+    width: 400px;
+    height: 100px;
+    position: relative;
+    height: 50px;
+    background: goldenrod;
+
+}

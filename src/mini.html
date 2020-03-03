@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="mini.css">
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>KSSU</title>
 </head>
 <body>
-$END$
+<div class="topbar">
+    <div class="topinner">
+        <div class="logo">
+            <img class="imageLogo" src="images/logo.svg">
+        </div>
+    </div>
+</div>
+<div class="middle">
+    <div class="flexContainer">
+
+        <div class="flexMid">
+            <h1>Now Playing</h1>
+            <div data-station="kssu" data-action="now-playing-v2" class="spinitron-js-widget"></div>
+            <script async src="//spinitron.com/static/js/widget.js"></script>
+        </div>
+
+    </div>
+
+</div>
+<div class="bottom">
+
+    <audio controls autoplay class="player">
+        <source src="https://streamingv2.shoutcast.com/kssu">
+    </audio>
+
+</div>
 </body>
-</html>
