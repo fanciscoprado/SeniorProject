@@ -86,8 +86,8 @@
 }
 .imageAlign{
     position: absolute;
-    right: 0px;
-    bottom: 0px;
+    right: 0;
+    bottom: 0;
 }
 .player{
     position: absolute;
