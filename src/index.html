@@ -8,50 +8,45 @@
 </head>
 <body>
 <div class="mainContainer">
-<div class="topbar">
-    <div class="topinner">
-        <div class="logo">
-            <img class="imageLogo" src="images/logo.svg">
-        </div>
-    </div>
-</div>
-<div class="middle">
-    <div class="flexContainer">
-        <div class="flexLeft">
-            <div class="midLeft">
-            <h1>Up Next</h1>
-            <div data-station="kssu" data-count="10" data-action="upcoming-shows" class="spinitron-js-widget"></div>
-            <script async src="//spinitron.com/static/js/widget.js"></script>
+    <div class="topbar">
+        <div class="topinner">
+            <div class="logo">
+                <img class="imageLogo" src="images/logo.svg">
             </div>
-        </div>
-        <div class="flexMid">
-            <h1>Now Playing</h1>
-            <div data-station="kssu" data-action="now-playing-v2" class="spinitron-js-widget"></div>
-            <script async src="//spinitron.com/static/js/widget.js"></script>
-            <img src="images/logo.svg">
-        </div>
-        <div class="flexRight">
-            <h1>Recent Jams</h1>
-            <div class="spinitron-js-widget" data-action="now-playing-v2" data-station="kssu" data-num="10" data-sharing="1" data-player="1" data-merch="1" data-cover="1"></div>
-            <script async src="//spinitron.com/static/js/widget.js"></script>
         </div>
     </div>
 
-</div>
-<div class="bottom">
+    <div class="middle">
+        <div class="flexContainer">
+            <div class="flexLeft">
+                <div class="midLeft">
+                <h1>Up Next</h1>
+                <div data-station="kssu" data-count="10" data-action="upcoming-shows" class="spinitron-js-widget"></div>
+                <script async src="//spinitron.com/static/js/widget.js"></script>
+                </div>
+            </div>
+            <div class="flexMid">
+                <h1>Now Playing</h1>
+                <div data-station="kssu" data-action="now-playing-v2" class="spinitron-js-widget"></div>
+                <script async src="//spinitron.com/static/js/widget.js"></script>
+                <img src="images/logo.svg">
+            </div>
+            <div class="flexRight">
+                <h1>Recent Jams</h1>
+                <div class="spinitron-js-widget" data-action="now-playing-v2" data-station="kssu" data-num="10" data-sharing="1" data-player="1" data-merch="1" data-cover="1"></div>
+                <script async src="//spinitron.com/static/js/widget.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
         <audio controls autoplay class="player">
             <source src="https://streamingv2.shoutcast.com/kssu_128.aac">
         </audio>
-
-
-    <a href="kssu.com" onclick="close_window(); Open(); window.open('mini.html',
-                         'newwindow',
-                         'resizable=0,width=450,height=400');
-
-              return false;"><img src="images/popOut.png" width="30" height="30" class="imageAlign"></a>
-
-
-</div>
+        <a href="kssu.com" onclick="close_window(); Open(); window.open('mini.html', 'newwindow', 'resizable=0,width=450,height=400'); return false;">
+            <img src="images/popOut.png" width="30" height="30" class="imageAlign">
+        </a>
+    </div>
 </div>
 </body>
 </html>
