@@ -39,14 +39,55 @@
         </div>
     </div>
 
-    <div class="bottom">
-        <audio controls autoplay class="player">
-            <source src="https://streamingv2.shoutcast.com/kssu_128.aac">
-        </audio>
-        <a href="kssu.com" onclick="close_window(); Open(); window.open('mini.html', 'newwindow', 'resizable=0,width=450,height=400'); return false;">
-            <img src="images/popOut.png" width="30" height="30" class="imageAlign">
-        </a>
-    </div>
+<div class="bottom">
+
+		<div id="audio-player">
+			<div id="audio-buttons">
+				<button id="play" onclick="stopSong()"></button>
+				<button id="stop" onclick="playSong()"></button>
+			</div>
+			<div class="clearfix"></div>
+			<input id="volume" type="range" min="0" max="1" value="0.7" onchange="changeVolume(this.value)" step="0.01">
+			<div class="clearfix"></div>
+			
+		</div>
+
+
+    <a href="popOut.html" onclick="close_window(); window.open('mini.html',
+                         'newwindow',
+                         'resizable=0,width=450,height=400');
+
+              return false;"><img src="images/popOut.png" width="30" height="30" class="imageAlign"></a>
+
+
 </div>
+</div>
+<script src="jquery.js"></script>
+<script src="index.js"></script>
 </body>
+<script type="text/javascript">
+	$('#play').hide();
+	var song = new Audio();
+	song.src = "https://streamingv2.shoutcast.com/kssu";
+	song.volume = 0.7;
+	window.onload = playFirst();
+	playFirst();
+	function playFirst(){
+		song.play();
+	}
+	function stopSong(){
+		song.src = "https://streamingv2.shoutcast.com/kssu";
+		song.play();
+		$('#play').hide();
+		$('#stop').show();
+	}
+	function playSong(){
+		song.pause();
+		$('#stop').hide();
+		$('#play').show();
+	}
+	function changeVolume(v_value){
+		song.volume = v_value;
+	}
+</script>
 </html>
