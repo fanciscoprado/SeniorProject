@@ -68,29 +68,7 @@
 <script src="index.js"></script>
 </body>
 <script type="text/javascript">
-	$('#play').hide();
-	var song = new Audio();
-	song.src = "https://streamingv2.shoutcast.com/kssu";
-	song.volume = 0.7;
-	window.onload = playFirst();
-	playFirst();
-	function playFirst(){
-		song.play();
-	}
-	function stopSong(){
-		song.src = "https://streamingv2.shoutcast.com/kssu";
-		song.play();
-		$('#play').hide();
-		$('#stop').show();
-	}
-	function playSong(){
-		song.pause();
-		$('#stop').hide();
-		$('#play').show();
-	}
-	function changeVolume(v_value){
-		song.volume = v_value;
-	}
+
 </script>
 <script>
     // Selecting the iframe element
