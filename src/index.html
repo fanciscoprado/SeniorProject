@@ -27,13 +27,15 @@
             </div>
             <div class="flexMid">
                 <h1>Now Playing</h1>
-                <div data-station="kssu" data-action="now-playing-v2" class="spinitron-js-widget"></div>
+                <iframe id="iframeid" src="//widgets.spinitron.com/widget/now-playing-v2?station=kssu&num=1&sharing=1&cover=1&player=1&merch=1" allow="encrypted-media"></iframe>
                 <script async src="//spinitron.com/static/js/widget.js"></script>
                 <img src="images/logo.svg">
             </div>
             <div class="flexRight">
                 <h1>Recent Jams</h1>
-                <div class="spinitron-js-widget" data-action="now-playing-v2" data-station="kssu" data-num="10" data-sharing="1" data-player="1" data-merch="1" data-cover="1"></div>
+                <div class="iframe-container">
+                    <iframe id="myiframe" src="//widgets.spinitron.com/widget/now-playing-v2?station=kssu&num=5&sharing=1&cover=1&player=1&merch=1" allow="encrypted-media"></iframe>
+                </div>
                 <script async src="//spinitron.com/static/js/widget.js"></script>
             </div>
         </div>
@@ -55,7 +57,7 @@
 
     <a href="popOut.html" onclick="close_window(); window.open('mini.html',
                          'newwindow',
-                         'resizable=0,width=450,height=400');
+                         'resizable=0,width=450,height=450');
 
               return false;"><img src="images/popOut.png" width="30" height="30" class="imageAlign"></a>
 
@@ -89,5 +91,14 @@
 	function changeVolume(v_value){
 		song.volume = v_value;
 	}
+</script>
+<script>
+    // Selecting the iframe element
+    var iframe = document.getElementById("myIframe");
+
+    // Adjusting the iframe height onload event
+    iframe.onload = function(){
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
 </script>
 </html>
