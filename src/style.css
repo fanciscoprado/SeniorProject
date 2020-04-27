@@ -15,16 +15,24 @@
     background: white;
 }
 
+/*.insta{
+    margin-left: 1800px;
+}*/
+
 .topinner{
     height: inherit;
     position: relative;
     z-index: 4;
 }
+
 .logo{
     height: 96px;
     width: 198.72px;
     padding-top: 12px;
 }
+
+
+
 .imageLogo{
     max-width: 100%;
     border-style: none;
