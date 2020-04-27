@@ -33,7 +33,12 @@ function changeVolume(v_value){
 }
 
 function close_window() {
-    close();
+    if(confirm("Switching Players")) {
+        close();
+        window.open('mini.html',
+            'newwindow',
+            'resizable=0,width=450,height=450');
+    }
 
 }
 function Open() {
