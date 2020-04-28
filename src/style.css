@@ -15,9 +15,18 @@
     background: white;
 }
 
-/*.insta{
-    margin-left: 1800px;
-}*/
+.insta{
+    float: right;
+    margin-top: 50px;
+    margin-right:80px;
+}
+
+.twitter{
+    float: right;
+    margin-top: 50px;
+    margin-right: 40px;
+}
+
 
 .topinner{
     height: inherit;
@@ -29,6 +38,8 @@
     height: 96px;
     width: 198.72px;
     padding-top: 12px;
+    float: left;
+
 }
 
 
