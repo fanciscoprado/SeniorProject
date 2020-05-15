@@ -1,9 +1,10 @@
-setInterval(refresh,15000 );
-setInterval(refreshRecents, 60000);
-//test code
+//Refresh interval for refreshing curent song and recent playlist
+setInterval(refresh,15000 );//set to 15 seconds
+setInterval(refreshRecents, 60000);// set to 60 seconds
 
-//-------------test code end
-$('#play').hide();
+
+/* Play/Pause button code***************************************************************************** */
+$('#play').hide();//Initialy hide play button
 var song = new Audio();
 song.src = "https://streamingv2.shoutcast.com/kssu";
 song.volume = 0.7;
@@ -17,17 +18,19 @@ function playFirst(){
         playSong()
     });
 }
-function stopSong(){
-    song.src = "https://streamingv2.shoutcast.com/kssu";
+function stopSong(){// Function to start playback.
+    //song.src = "https://streamingv2.shoutcast.com/kssu";
     song.play();
     $('#play').hide();
     $('#stop').show();
 }
-function playSong(){
+function playSong(){ //function to puase playback. Hides stop button and shows play button
     song.pause();
     $('#stop').hide();
     $('#play').show();
 }
+/* ****************************************************************************************************************************** */
+
 function changeVolume(v_value){
     song.volume = v_value;
 }
@@ -52,6 +55,6 @@ function refresh() {
 }
 function refreshRecents() {
     document.getElementById('myiframe').src = document.getElementById('myiframe').src;
-    console.log("hello");
+
 
 }
