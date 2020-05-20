@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .mainContainer{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            min-height: 100%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+        .topbar{
+            position: relative;
+            height: 120px;
+            z-index: 1;
+            background: white;
+        }
+
+        .insta{
+            float: right;
+            margin-top: 50px;
+            margin-right:80px;
+        }
+
+        .twitter{
+            float: right;
+            margin-top: 50px;
+            margin-right: 40px;
+        }
+
+
+        .topinner{
+            height: inherit;
+            position: relative;
+            z-index: 4;
+        }
+
+        .logo{
+            height: 96px;
+            width: 198.72px;
+            padding-top: 12px;
+            float: left;
+
+        }
+
+
+
+        .imageLogo{
+            max-width: 100%;
+            border-style: none;
+        }
+        .flexContainer{
+
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: inherit;
+            width: 100%;
+
+
+        }
+        .flexLeft{
+            flex: 1;          /* shorthand for: flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
+            align-items: center;
+            align-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+        .midLeft{
+            margin-top: 10px;
+            display: inline-block;
+
+        }
+        .flexMid{
+            flex: 1;
+
+            overflow: hidden;
+            text-align: center;
+
+        }
+        .midMid{
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .flexRight{
+            flex: 1;
+
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+
+        }
+        .midRight{
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .middle{
+            background-image: url("images/background.jpg");
+            position: relative;
+            height: 100%;
+
+
+
+
+        }
+        .imageAlign{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        #audio-player{
+            text-align:center;
+        }
+
+        .clearfix{
+            clear:both;
+        }
+
+
+        input#volume{
+            border-radius:10px;
+            width:10%;
+            -webkit-appearance: none !important;
+            background:#ccc;
+            box-shadow: 0px 0px 0px 2px #b28830;
+            height:10px;
+            margin-bottom:20px;
+        }
+
+        input#volume::-webkit-slider-thumb{
+            -webkit-appearance: none !important;
+            border-radius:10px;
+            background:goldenrod;
+            height:10px;
+            width:10px;
+        }
+
+        #buttons{
+            width:90%;
+            display:block;
+            margin:15px auto;
+            margin-left:23px;
+            overflow:auto;
+        }
+
+        button#play{
+            width:39px;
+            height:49px;
+            border:none;
+            background:url(images/play.png) no-repeat;
+        }
+
+        button#stop{
+            width:39px;
+            height:49px;
+            border:none;
+            background:url(images/stop.png) no-repeat;
+        }
+        .bottom {
+
+            position: fixed;
+            bottom: 0;
+
+            height: 100px;
+            width: 100%;
+            background: goldenrod;
+
+        }
+        #schedule{
+
+
+        }
+
+        .iframe-container {
+            overflow: hidden;
+            padding-top: 56.25%;
+            position: relative;
+            height: 100%;
+        }
+
+        .iframe-container iframe {
+            border: 0;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>KSSU</title>
+</head>
+<body>
+<div class="mainContainer">
+
+    <div class="middle">
+        <div class="flexContainer">
+            <div class="flexLeft">
+                <div class="midLeft">
+                    <h1>DJ Schedule</h1>
+                    <div data-station="kssu" data-count="10" data-action="upcoming-shows" class="spinitron-js-widget"></div>
+                    <script async src="//spinitron.com/static/js/widget.js"></script>
+                </div>
+            </div>
+            <div class="flexMid">
+                <h1>Now Playing</h1>
+                <iframe id="iframeid" src="//widgets.spinitron.com/widget/now-playing-v2?station=kssu&num=1&sharing=1&cover=1&player=1&merch=1" allow="encrypted-media"></iframe>
+                <script async src="//spinitron.com/static/js/widget.js"></script>
+                <img src="images/logo.svg">
+            </div>
+            <div class="flexRight">
+                <h1>Recent Jams</h1>
+                <div class="iframe-container">
+                    <iframe id="myiframe" src="//widgets.spinitron.com/widget/now-playing-v2?station=kssu&num=5&sharing=1&cover=1&player=1&merch=1" allow="encrypted-media"></iframe>
+                </div>
+                <script async src="//spinitron.com/static/js/widget.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+
+        <div id="audio-player">
+            <div id="audio-buttons">
+                <button id="play" onclick="stopSong()"></button>
+                <button id="stop" onclick="playSong()"></button>
+            </div>
+            <div class="clearfix"></div>
+            <input id="volume" type="range" min="0" max="1" value="0.7" onchange="changeVolume(this.value)" step="0.01">
+            <div class="clearfix"></div>
+
+        </div>
+
+
+        <a href="popOut.html" onclick="close_window();
+
+              return false;"><img src="images/popOut.png" width="30" height="30" class="imageAlign"></a>
+
+
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    //Refresh interval for refreshing curent song and recent playlist
+    setInterval(refresh,15000 );//set to 15 seconds
+    setInterval(refreshRecents, 60000);// set to 60 seconds
+
+
+    /* Play/Pause button code***************************************************************************** */
+    $('#play').hide();//Initialy hide play button
+    var song = new Audio();
+    song.src = "https://streamingv2.shoutcast.com/kssu";
+    song.volume = 0.7;
+    window.onload = playFirst();
+    playFirst();
+
+    function playFirst(){
+        song.play().catch(error => {
+            // Autoplay was prevented.
+            // Show a "Play" button so that user can start playback.
+            playSong()
+        });
+    }
+    function stopSong(){// Function to start playback.
+        //song.src = "https://streamingv2.shoutcast.com/kssu";
+        song.play();
+        $('#play').hide();
+        $('#stop').show();
+    }
+    function playSong(){ //function to puase playback. Hides stop button and shows play button
+        song.pause();
+        $('#stop').hide();
+        $('#play').show();
+    }
+    /* ****************************************************************************************************************************** */
+
+    function changeVolume(v_value){
+        song.volume = v_value;
+    }
+
+    function close_window() {
+        // if(confirm("Switching Players")) {
+        //   close();
+
+        //}
+        window.open('', '_self');
+        setTimeout(window.close(), 500);
+        window.open('mini.html',
+            'newwindow',
+            'resizable=0,width=450,height=450');
+
+    }
+    function Open() {
+        window.open("https://www.kssu.com", "_blank");
+    }
+    function refresh() {
+        document.getElementById('iframeid').src = document.getElementById('iframeid').src;
+    }
+    function refreshRecents() {
+        document.getElementById('myiframe').src = document.getElementById('myiframe').src;
+
+
+    }
+
+</script>
+</body>
+
+
+</html>

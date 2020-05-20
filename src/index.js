@@ -36,10 +36,6 @@ function changeVolume(v_value){
 }
 
 function close_window() {
-   // if(confirm("Switching Players")) {
-     //   close();
-
-    //}
     window.open('', '_self');
     setTimeout(window.close(), 500);
     window.open('mini.html',
